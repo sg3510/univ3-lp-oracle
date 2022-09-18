@@ -14,10 +14,10 @@ p1 = price of token1 in USD
 UNITS_0 = decimals of token0
 UNITS_1 = decimals of token1
 
-token1/token0 = (p0 / 10^UNITS_0) / (p1 / 10^UNITS_1)               [Conversion from Maker's price ratio into Uniswap's format]
+token0/token1 = (p0 / 10^UNITS_0) / (p1 / 10^UNITS_1)               [Conversion from Maker's price ratio into Uniswap's format]
               = (p0 * 10^UNITS_1) / (p1 * 10^UNITS_0)
 
-sqrtPriceX96 = sqrt(token1/token0) * 2^96                           [From Uniswap's definition]
+sqrtPriceX96 = sqrt(token0/token1) * 2^96                           [From Uniswap's definition]
              = sqrt((p0 * 10^UNITS_1) / (p1 * 10^UNITS_0)) * 2^96
              = sqrt((p0 * 10^UNITS_1) / (p1 * 10^UNITS_0)) * 2^48 * 2^48
              = sqrt((p0 * 10^UNITS_1 * 2^96) / (p1 * 10^UNITS_0)) * 2^48
